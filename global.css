@@ -1,0 +1,370 @@
+:root {
+    /* Colors */
+    --text-emphasis: #000;
+    --text-color: #333;
+    --text-muted: rgba(176, 176, 176, 0.1);
+    
+    /* Backgrounds */
+    --bg-color: rgba(255, 255, 255, 0.9);
+    --bg-accent-color: #e5e7eb;
+    --bg-black: rgba(255, 255, 255, 0.9);
+    
+    /* Accent or Shared BG Colors */
+    --accent-color: #7c86ff;
+    --nav-bg: #b3b3b31a;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    /* Typography */
+    --font-heading: "Cal Sans", sans-serif;
+    --font-body: "Geist", sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Layout */
+    --content-max-width: 1400px;  /* Maximum width of the content area */
+    --content-padding: var(--spacing-lg);  /* Padding around content */
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+    
+    /* Typography - Responsive Sizes */
+    --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --font-size-lg: clamp(1.125rem, 1.1rem + 0.25vw, 1.25rem);
+    --font-size-xl: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
+    --font-size-2xl: clamp(1.5rem, 1.4rem + 0.5vw, 2rem);
+    --font-size-3xl: clamp(2rem, 1.8rem + 1vw, 2.5rem);
+    
+    /* Line Heights */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--font-size-3xl);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-md);
+}
+
+p {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Common Layout Classes */
+.section-padding {
+    padding: 88px 128px;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: var(--nav-bg);
+    border-radius: var(--radius-lg);
+    width: fit-content;
+    backdrop-filter: blur(8px);
+    transform: translateY(0);
+    transition: transform var(--transition-base);
+    z-index: 1000;
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--text-color);    
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    line-height: var(--line-height-tight);
+    padding: 8px;
+    transition: color var(--transition-base);
+}
+
+.navbar a:hover {
+    color: var(--text-emphasis);
+    text-decoration: wavy underline;
+    text-decoration-color: var(--accent-color);
+}
+
+.navbar a.current {
+    color: var(--text-emphasis);
+    text-decoration: wavy underline;
+    text-decoration-color: var(--accent-color);
+}
+
+.navbar > * {
+    margin: 0 8px;
+}
+
+.fr {
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 140%;
+}
+
+/* Common Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .section-padding {
+        padding: 64px 64px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 32px 24px;
+    }
+    
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-padding {
+        padding: 24px 16px;
+    }
+}
+
+/* Layout System
+ * A flexible layout system that supports:
+ * 1. Side-by-side content (slide-style)
+ * 2. Full-width centered content
+ * 3. Extended content options
+ */
+.layout-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xl) var(--spacing-xl);
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Content Positioning Classes */
+.content-left {
+    flex: 1;
+    max-width: 50%;
+    padding-right: var(--spacing-lg);
+}
+
+.content-right {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.content-center {
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.content-full {
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.height-full {
+    height: 100vh;
+}
+
+/* Extended Content Options */
+.content-left-extended {
+    flex: 1;
+    max-width: 60%;
+    margin-left: calc(-1 * var(--spacing-xl));
+    padding-left: var(--spacing-xl);
+}
+
+.content-right-extended {
+    flex: 1;
+    max-width: 60%;
+    margin-right: calc(-1 * var(--spacing-xl));
+    padding-right: var(--spacing-xl);
+}
+
+/* Background Support */
+.has-background {
+    position: relative;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 960px) {
+    .layout-grid {
+        flex-direction: column;
+        padding: var(--spacing-lg) var(--spacing-md);
+        gap: var(--spacing-lg);
+    }
+
+    .content-left,
+    .content-right,
+    .content-left-extended,
+    .content-right-extended {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .content-center,
+    .content-full {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .layout-grid {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .content-center,
+    .content-full {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+}
+
+/* Example Usage:
+ * 
+ * Side-by-side layout (like carousel slides):
+ * <section class="layout-grid">
+ *   <div class="content-left">Left content</div>
+ *   <div class="content-right">Right content</div>
+ * </section>
+ * 
+ * Centered content:
+ * <section class="layout-grid">
+ *   <div class="content-center">Centered content</div>
+ * </section>
+ * 
+ * Full-width content:
+ * <section class="layout-grid">
+ *   <div class="content-full">Full-width content</div>
+ * </section>
+ * 
+ * Extended content:
+ * <section class="layout-grid">
+ *   <div class="content-left-extended">Extended left content</div>
+ *   <div class="content-right">Right content</div>
+ * </section>
+ */
