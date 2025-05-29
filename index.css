@@ -1,6 +1,5 @@
 body {
   box-sizing: border-box;
-  font-family: "montserrat", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #333;
@@ -46,6 +45,7 @@ body {
 }
 .navbar ul {
   display: flex;
+  font-family: 'montserrat', sans-serif;
   flex-direction: row;
   gap: 8px;
   list-style-type: none;
@@ -64,6 +64,7 @@ body {
 }
 .navbar a:hover {
   color: #000;
+  font-family: 'playfair display', serif;
   font-weight: 700;
   transition: color 0.3s ease-in-out;
   text-decoration: wavy underline;
@@ -85,6 +86,7 @@ body {
   align-items: left;
   flex-grow: 1;
   min-height: 0;
+  font-family: 'montserrat', sans-serif;
 }
 .hero-wrapper {
   display: flex;
@@ -97,9 +99,10 @@ body {
   overflow: hidden;
   box-sizing: border-box;
   background-color: #f0f0f0;
+  font-family: 'montserrat', sans-serif;
 }
 .splash-title {
-  font-family: "Inter", sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-size: 2.5rem;
   font-weight: 500;
   line-height: 140%;
@@ -114,3 +117,4 @@ body {
   height: 80px;
   width: 80px;
 }
+
