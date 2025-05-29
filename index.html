@@ -9,6 +9,14 @@
       href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Geist:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="logo-bubbles.css" />
@@ -23,7 +31,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-      (function() {
+      (function () {
         emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
       })();
     </script>
@@ -76,7 +84,8 @@
             <div class="slide-content">
               <h2 class="slide-heading">Capabilities</h2>
               <p class="slide-text">
-                A unique blend of HR expertise, product management skills, and technical knowledge to drive digital transformation.
+                A unique blend of HR expertise, product management skills, and
+                technical knowledge to drive digital transformation.
               </p>
             </div>
             <div class="right-side-content">
@@ -87,7 +96,7 @@
                     <li>Certified Agile Scrum Master</li>
                     <li>User Research & Design Thinking</li>
                     <li>Roadmap Planning & Strategy</li>
-                    <li>Design Thinking & UI Prototyping</li>    
+                    <li>Design Thinking & UI Prototyping</li>
                     <li>Creating Design Systems</li>
                     <li>Release Planning & Change Management</li>
                   </ul>
@@ -114,7 +123,7 @@
                     <li>Figma</li>
                     <li>HTML, CSS, some Vanilla JS</li>
                     <li>Vercel Deployment & Radix UI</li>
-                    <li>Tailwinds CSS </li>
+                    <li>Tailwinds CSS</li>
                     <li>VS Code & Github</li>
                     <li>PowerBI</li>
                     <li>JIRA</li>
@@ -200,7 +209,24 @@
             <div class="nav-dot" data-slide="1"></div>
             <div class="nav-dot" data-slide="2"></div>
             <div class="nav-dot" data-slide="3"></div>
+          <div class="carousel-nav">
+            <div class="nav-dot active" data-slide="0"></div>
+            <div class="nav-dot" data-slide="1"></div>
+            <div class="nav-dot" data-slide="2"></div>
+            <div class="nav-dot" data-slide="3"></div>
           </div>
+
+          <div class="scroll-instruction">Scroll or use arrow keys</div>
+        </div>
+      </section>
+    </main>
+    <script src="nav.js"></script>
+    <script src="counter.js"></script>
+    <script src="logo-bubbles.js"></script>
+    <script src="carousel.js"></script>
+    <script src="experience-chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="kanban.js"></script>
 
           <div class="scroll-instruction">Scroll or use arrow keys</div>
         </div>
