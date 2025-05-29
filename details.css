@@ -180,7 +180,7 @@
 }
 
 .features-nav .nav-dot.active {
-  background: var(--text-color);
+  background: var(--accent-color);
   transform: scale(1.2);
 }
 
