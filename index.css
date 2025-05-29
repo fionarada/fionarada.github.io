@@ -1,6 +1,6 @@
 body {
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "montserrat", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #333;
@@ -14,6 +14,7 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  cursor: url('public/assets/emoji-kimi.png'), auto;
 }
 #portfolio-landing {
   display: flex;
@@ -22,18 +23,26 @@ body {
   align-items: left;
   justify-content: left;
   background-color: #f0f0f0;
+  margin-left: auto;
 }
-.navbar {
+.navbar-container {
   display: flex;
   flex-direction: row;
-  gap: 8px;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px 120px;
+}
+.navbar {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 20px;
   background-color: #b3b3b31a;
   border-radius: 12px;
-  flex-direction: row;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  font-family: 'montserrat', sans-serif;
+  font-size: viewwidth(0.5rem);
+  text-transform: capitalize;
+  
 }
 .navbar ul {
   display: flex;
@@ -59,10 +68,15 @@ body {
   transition: color 0.3s ease-in-out;
   text-decoration: wavy underline;
   text-decoration-color: #7c86ff;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+  text-transform: uppercase;
+  
 }
 .navbar a.active {
   color: #000;
   font-weight: 700;
+  
 }
 .hero-text-section {
   display: flex;
@@ -97,7 +111,6 @@ body {
   line-height: 140%;
 }
 .fr-logo {
-  height: 2.5rem;
-  width: 2.5rem;
-  line-height: 140%;
+  height: 80px;
+  width: 80px;
 }
